@@ -1,0 +1,16 @@
+version: "3.7"
+
+services:
+    database:
+        image: postgres
+        container_name: ignite-database-unitary-tests-challenge
+        restart: unless-stopped
+        ports:
+            - 5432:5432
+        environment:
+            - POSTGRES_USER=postgres
+            - POSTGRES_PASSWORD=docker
+            - POSTGRES_DB=fin_api
+volumes:
+    pgdata:
+        driver: local
